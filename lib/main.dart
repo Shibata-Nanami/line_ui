@@ -94,6 +94,52 @@ class MyHomePage extends StatelessWidget {
         //   ),
         // ],
       ),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(
+            horizontal: 16,
+          ),
+          child: Column(
+            children: [
+              Container(
+                  height: 40,
+                  width: MediaQuery.of(context).size.width,
+                  decoration: BoxDecoration(
+                    color: const Color.fromARGB(255, 29, 28, 28),
+                    borderRadius: BorderRadius.circular(4),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 8,
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          children: const [
+                            Icon(
+                              Icons.search,
+                              color: Color.fromARGB(255, 170, 170, 170),
+                            ),
+                            Text(
+                              "検索",
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 112, 112, 112),
+                              ),
+                            ),
+                          ],
+                        ),
+                        const Icon(
+                          Icons.qr_code_scanner,
+                          color: Color.fromARGB(255, 170, 170, 170),
+                        ),
+                      ],
+                    ),
+                  )),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

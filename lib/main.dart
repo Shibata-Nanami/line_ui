@@ -136,8 +136,25 @@ class MyHomePage extends StatelessWidget {
                 ),
               ),
             ),
+            //一番下の部分
+            Container(
+              alignment: Alignment.bottomCenter,
+              child: Column(children: const [
+                Padding(
+                  padding: EdgeInsets.only(
+                    right: 12.0,
+                  ),
+                  child: Icon(
+                    Icons.message_outlined,
+                    size: 28,
+                    color: Color.fromARGB(255, 170, 170, 170),
+                  ),
+                ),
+              ]),
+            ),
+            //スクロール出来る部分
             SizedBox(
-              height: 1000,
+              height: 700,
               child: ListView.separated(
                   itemBuilder: (context, index) => ListTile(
                         title: Text(

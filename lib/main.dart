@@ -136,38 +136,49 @@ class MyHomePage extends StatelessWidget {
                 ),
               ),
             ),
-            //一番下の部分
-            Container(
-              alignment: Alignment.bottomCenter,
-              child: Column(children: const [
-                Padding(
-                  padding: EdgeInsets.only(
-                    right: 12.0,
-                  ),
-                  child: Icon(
-                    Icons.message_outlined,
-                    size: 28,
-                    color: Color.fromARGB(255, 170, 170, 170),
-                  ),
-                ),
-              ]),
-            ),
             //スクロール出来る部分
             SizedBox(
               height: 700,
               child: ListView.separated(
-                  itemBuilder: (context, index) => ListTile(
-                        title: Text(
-                          "item ${index + 1}",
-                          style: const TextStyle(
-                            color: Colors.white,
-                          ),
-                        ),
+                /*separated:区切り線*/
+                itemBuilder: (context, index) => ListTile(
+                  title: Text(
+                    "message ${index + 1}",
+                    style: const TextStyle(
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+                separatorBuilder: (context, index) => const Divider(
+                  height: 1.0,
+                ),
+                itemCount: 30,
+              ),
+            ),
+            /*Lineの一番下の部分*/
+            Container(
+              height: 40,
+              width: MediaQuery.of(context).size.width,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(4),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 8,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Row(children: const [
+                      Icon(
+                        Icons.abc,
+                        color: Color.fromARGB(255, 170, 170, 170),
                       ),
-                  separatorBuilder: (context, index) => const Divider(
-                        height: 1.0,
-                      ),
-                  itemCount: 30),
+                    ]),
+                  ],
+                ),
+              ),
             ),
           ]),
         ),

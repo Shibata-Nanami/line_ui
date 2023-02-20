@@ -140,7 +140,7 @@ class MyHomePage extends StatelessWidget {
             SizedBox(
               height: 700,
               child: ListView.separated(
-                /*separated:区切り線*/
+                //separated:区切り線
                 itemBuilder: (context, index) => ListTile(
                   title: Text(
                     "message ${index + 1}",
@@ -155,7 +155,7 @@ class MyHomePage extends StatelessWidget {
                 itemCount: 30,
               ),
             ),
-            /*Lineの一番下の部分*/
+            //Lineの一番下の部分
             Container(
               height: 40,
               width: MediaQuery.of(context).size.width,

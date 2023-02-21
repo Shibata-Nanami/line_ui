@@ -24,6 +24,7 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenSize = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 18, 17, 17),
       appBar: AppBar(
@@ -94,7 +95,8 @@ class MyHomePage extends StatelessWidget {
         //   ),
         // ],
       ),
-      body: SingleChildScrollView(
+      // TODO: スクロールできる箇所だけにしよう（現状は最下部もできてしまう））
+      body: Center(
         child: Padding(
           padding: const EdgeInsets.symmetric(
             horizontal: 16,
@@ -138,29 +140,39 @@ class MyHomePage extends StatelessWidget {
             ),
             //スクロール出来る部分
             SizedBox(
-              height: 700,
+              // TODO: heightを固定値にしない（要素数によって変わるので）
+              height: MediaQuery.of(context).size.height * 0.75,
+              width: MediaQuery.of(context).size.width,
               child: ListView.separated(
                 //separated:区切り線
                 itemBuilder: (context, index) => ListTile(
+                  // TODO: こんな感じで画像を表示できる
+                  leading: const CircleAvatar(
+                    backgroundImage: NetworkImage(
+                        "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"),
+                  ),
                   title: Text(
                     "message ${index + 1}",
                     style: const TextStyle(
                       color: Colors.white,
                     ),
                   ),
+                  // TODO: subtitleも実装してみよう
                 ),
+                // TODO: separator必要ですか？？
                 separatorBuilder: (context, index) => const Divider(
                   height: 1.0,
                 ),
                 itemCount: 30,
               ),
             ),
+            // TODO: BottomNavigationBar, Stack + Positionedで実装してみよう
             //Lineの一番下の部分
             Container(
-              height: 40,
+              height: 60,
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: const Color.fromARGB(255, 20, 19, 19),
                 borderRadius: BorderRadius.circular(4),
               ),
               child: Padding(

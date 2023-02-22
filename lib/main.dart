@@ -169,7 +169,7 @@ class MyHomePage extends StatelessWidget {
             // TODO: BottomNavigationBar, Stack + Positionedで実装してみよう
             //Lineの一番下の部分
             Container(
-              height: 60,
+              height: 68,
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
                 color: const Color.fromARGB(255, 20, 19, 19),
@@ -180,14 +180,82 @@ class MyHomePage extends StatelessWidget {
                   horizontal: 8,
                 ),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Row(children: const [
-                      Icon(
-                        Icons.abc,
-                        color: Color.fromARGB(255, 170, 170, 170),
-                      ),
-                    ]),
+                    Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: const [
+                          Icon(
+                            Icons.ac_unit_sharp,
+                            color: Color.fromARGB(255, 170, 170, 170),
+                            size: 30,
+                          ),
+                          Align(
+                            alignment: Alignment.bottomCenter,
+                            child: Text(
+                              "検索",
+                              style: TextStyle(
+                                  color: Color.fromARGB(255, 112, 112, 112),
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                          Icon(
+                            Icons.ac_unit_sharp,
+                            color: Color.fromARGB(255, 170, 170, 170),
+                            size: 30,
+                          ),
+                          Align(
+                            alignment: Alignment.bottomCenter,
+                            child: Text(
+                              "検索",
+                              style: TextStyle(
+                                  color: Color.fromARGB(255, 112, 112, 112),
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                          Icon(
+                            Icons.ac_unit_sharp,
+                            color: Color.fromARGB(255, 170, 170, 170),
+                            size: 30,
+                          ),
+                          Align(
+                            alignment: Alignment.bottomCenter,
+                            child: Text(
+                              "検索",
+                              style: TextStyle(
+                                  color: Color.fromARGB(255, 112, 112, 112),
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                          Icon(
+                            Icons.ac_unit_sharp,
+                            color: Color.fromARGB(255, 170, 170, 170),
+                            size: 30,
+                          ),
+                          Align(
+                            alignment: Alignment.bottomCenter,
+                            child: Text(
+                              "検索",
+                              style: TextStyle(
+                                  color: Color.fromARGB(255, 112, 112, 112),
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                          Icon(
+                            Icons.ac_unit_sharp,
+                            color: Color.fromARGB(255, 170, 170, 170),
+                            size: 30,
+                          ),
+                          Align(
+                            alignment: Alignment.bottomCenter,
+                            child: Text(
+                              "検索",
+                              style: TextStyle(
+                                  color: Color.fromARGB(255, 112, 112, 112),
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                        ]),
                   ],
                 ),
               ),

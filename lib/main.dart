@@ -95,7 +95,7 @@ class MyHomePage extends StatelessWidget {
         //   ),
         // ],
       ),
-      // TODO: スクロールできる箇所だけにしよう（現状は最下部もできてしまう））
+      // TODO: スクロールできる箇所だけにしよう（現状は最下部もできてしまう）） //修正済
       body: Center(
         child: Padding(
           padding: const EdgeInsets.symmetric(
@@ -140,29 +140,33 @@ class MyHomePage extends StatelessWidget {
             ),
             //スクロール出来る部分
             SizedBox(
-              // TODO: heightを固定値にしない（要素数によって変わるので）
-              height: MediaQuery.of(context).size.height * 0.75,
+              // TODO: heightを固定値にしない（要素数によって変わるので） //修正済
+              height: MediaQuery.of(context).size.height * 0.72,
               width: MediaQuery.of(context).size.width,
-              child: ListView.separated(
+              child: ListView.builder(
                 //separated:区切り線
                 itemBuilder: (context, index) => ListTile(
+                  isThreeLine: true,
                   // TODO: こんな感じで画像を表示できる
                   leading: const CircleAvatar(
                     backgroundImage: NetworkImage(
                         "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"),
                   ),
                   title: Text(
-                    "message ${index + 1}",
+                    "Title ${index + 1}",
+                    style: const TextStyle(
+                      color: Colors.white,
+                    ),
+                  ),
+                  subtitle: Text(
+                    "subtitle ${index + 1}",
                     style: const TextStyle(
                       color: Colors.white,
                     ),
                   ),
                   // TODO: subtitleも実装してみよう
                 ),
-                // TODO: separator必要ですか？？
-                separatorBuilder: (context, index) => const Divider(
-                  height: 1.0,
-                ),
+                // TODO: separator必要ですか？？  //消去済
                 itemCount: 30,
               ),
             ),

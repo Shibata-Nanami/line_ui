@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+//material.dart:Flutterアプリ開発に必要なファイルをすべて包含しているファイル
 
 import 'style.dart';
 
@@ -14,16 +15,20 @@ class BottomNavigation extends StatelessWidget {
       height: 76,
       width: MediaQuery.of(context).size.width,
       decoration: BoxDecoration(
-        color: const Color.fromARGB(255, 20, 19, 19),
-        borderRadius: BorderRadius.circular(4),
+        color: tertiaryBlack, //styleで設定した色呼び出し
+        borderRadius: BorderRadius.circular(4), //BorderRadius:角丸
       ),
       child: Padding(
+        //余白設定
         padding: const EdgeInsets.symmetric(
+          //左と右に余白設定、vertical：上と下に同じ値の余白設定
           horizontal: 8,
         ),
         child: Row(
+          //水平方向にWidgetを並べる
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: const [
+            //以下、ナビゲーション部分のアイコン設定
             BottomNavigationIcon(
               icon: Icons.search_outlined,
               label: "検索",
@@ -65,6 +70,7 @@ class BottomNavigationIcon extends StatelessWidget {
     this.fontSize = 14,
   });
 
+// final：これで定義すると再代入不可となる
   final String label;
   final IconData icon;
   final double fontSize;
@@ -74,18 +80,22 @@ class BottomNavigationIcon extends StatelessWidget {
     return SizedBox(
       width: 60,
       child: Column(
+        //垂直方向にWidgetを並べる
         children: [
           Icon(
+            //アイコン設定
             icon,
-            color: primaryWhite,
-            size: 30,
+            color: primaryWhite, //styleで設定した色呼び出し
+            size: 30, //大きさ設定
           ),
-          const SizedBox(height: 4),
+          const SizedBox(height: 4), //Widgetのサイズ変更
           Text(
+            //テキスト設定
             label,
             style: TextStyle(
-              color: primaryGrey,
-              fontWeight: FontWeight.bold,
+              //テキストのスタイル設定
+              color: primaryGrey, //styleで設定した色呼び出し
+              fontWeight: FontWeight.bold, //フォントの幅設定、FontWeight.bold:太字
               fontSize: fontSize,
             ),
           ),
